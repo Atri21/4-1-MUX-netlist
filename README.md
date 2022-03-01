@@ -69,29 +69,29 @@ xm2 net104 a gnd! gnd! n105 w=0.1u l=0.03u nf=1 m=1
 * View Search List : hspice hspiceD schematic spice veriloga
 * View Stop List   : hspice hspiceD
 ********************************************************************************
-xi0 net24 net26 net12 y net20 net18 net16 net14 net11 mux
-v1 net11 gnd! dc=1.8
-c7 y gnd! c=1p
-v18 net12 gnd! dc=0 pulse ( 0 1.8 0 1n 1n 80u 160u )
-v17 net14 gnd! dc=0 pulse ( 1.8 0 0 1n 1n 40u 80u )
-v16 net16 gnd! dc=0 pulse ( 1.8 0 0 1n 1n 20u 40u )
-v15 net18 gnd! dc=0 pulse ( 1.8 0 0 1n 1n 10u 20u )
-v14 net20 gnd! dc=0 pulse ( 1.8 0 0 1n 1n 5u 10u )
-v13 net26 gnd! dc=0 pulse ( 1.8 0 0 1n 1n 20u 40u )
-v12 net24 gnd! dc=0 pulse ( 1.8 0 0 1n 1n 40u 80u )
+xi0 net24 net26 net12 y net20 net18 net16 net14 net11 mux      
+v1 net11 gnd! dc=1.8      
+c7 y gnd! c=1p     
+v18 net12 gnd! dc=0 pulse ( 0 1.8 0 1n 1n 80u 160u )   
+v17 net14 gnd! dc=0 pulse ( 1.8 0 0 1n 1n 40u 80u )      
+v16 net16 gnd! dc=0 pulse ( 1.8 0 0 1n 1n 20u 40u )       
+v15 net18 gnd! dc=0 pulse ( 1.8 0 0 1n 1n 10u 20u )      
+v14 net20 gnd! dc=0 pulse ( 1.8 0 0 1n 1n 5u 10u )       
+v13 net26 gnd! dc=0 pulse ( 1.8 0 0 1n 1n 20u 40u )      
+v12 net24 gnd! dc=0 pulse ( 1.8 0 0 1n 1n 40u 80u )     
 
-.tran '20u' '160u' name=tran
+.tran '20u' '160u' name=tran    
 
-.option primesim_remove_probe_prefix = 0
-.probe v(*) i(*) level=1
-.probe tran v(y) v(net12) v(net14) v(net16) v(net18) v(net20) v(net24) v(net26)
+.option primesim_remove_probe_prefix = 0     
+.probe v(*) i(*) level=1      
+.probe tran v(y) v(net12) v(net14) v(net16) v(net18) v(net20) v(net24) v(net26)        
 
-.temp 25
+.temp 25     
+      
+.option primesim_output=wdf     
 
-.option primesim_output=wdf
 
-
-.option parhier = LOCAL
+.option parhier = LOCAL       
 
 
 .end
